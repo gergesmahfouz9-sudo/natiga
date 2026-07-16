@@ -1,37 +1,17 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عرض النتيجة</title>
-</head>
-<body>
+</html>const students = [
+  { seat: "1001", name: "أحمد محمد", result: "ناجح", grade: "جيد" },
+  { seat: "1002", name: "محمود علي", result: "ناجح", grade: "جيد جدًا" },
+  { seat: "1003", name: "محمد حسن", result: "ناجح", grade: "امتياز" },
+  { seat: "1004", name: "يوسف سامي", result: "راسب", grade: "ضعيف" },
+  { seat: "1005", name: "إبراهيم أحمد", result: "ناجح", grade: "مقبول" },
+  { seat: "1006", name: "مينا جرجس", result: "ناجح", grade: "جيد" },
+  { seat: "1007", name: "بيتر فادي", result: "ناجح", grade: "جيد جدًا" },
+  { seat: "1008", name: "جرجس محفوظ", result: "ناجح", grade: "امتياز" },
+  { seat: "1009", name: "شنودة نبيل", result: "راسب", grade: "ضعيف" },
+  { seat: "1010", name: "رامي عادل", result: "ناجح", grade: "جيد" },
+  { seat: "1011", name: "عادل سمير", result: "ناجح", grade: "مقبول" },
+  { seat: "1012", name: "سامح نجيب", result: "ناجح", grade: "جيد" },
+  { seat: "1013", name: "باسم مجدي", result: "ناجح", grade: "جيد جدًا" },
+  { seat: "1014", name: "كريم فؤاد", result: "راسب", grade: "ضعيف" },
+  { seat: "1015", name: "إيهاب وائل", result: "نا
 
-<h2>نتيجة الطلاب</h2>
-
-<input type="text" id="seat" placeholder="اكتب رقم الجلوس">
-
-<button onclick="searchResult()">عرض النتيجة</button>
-
-<p id="result"></p>
-
-<script>
-const students = {
-"1001":"أحمد محمد - المجموع 480 - ممتاز",
-"1002":"علي حسن - المجموع 450 - جيد جدًا"
-};
-
-function searchResult(){
-let seat=document.getElementById("seat").value;
-let result=document.getElementById("result");
-
-if(students[seat]){
-result.innerHTML=students[seat];
-}else{
-result.innerHTML="رقم الجلوس غير موجود";
-}
-}
-</script>
-
-</body>
-</html>
