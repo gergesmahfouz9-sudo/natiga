@@ -1,19 +1,211 @@
 <!DOCTYPE html>
-<html>
-...
-  { seat: "1001", name: "أحمد محمد", result: "ناجح", grade: "جيد" },
-  { seat: "1002", name: "محمود علي", result: "ناجح", grade: "جيد جدًا" },
-  { seat: "1003", name: "محمد حسن", result: "ناجح", grade: "امتياز" },
-  { seat: "1004", name: "يوسف سامي", result: "راسب", grade: "ضعيف" },
-  { seat: "1005", name: "إبراهيم أحمد", result: "ناجح", grade: "مقبول" },
-  { seat: "1006", name: "مينا جرجس", result: "ناجح", grade: "جيد" },
-  { seat: "1007", name: "بيتر فادي", result: "ناجح", grade: "جيد جدًا" },
-  { seat: "1008", name: "جرجس محفوظ", result: "ناجح", grade: "امتياز" },
-  { seat: "1009", name: "شنودة نبيل", result: "راسب", grade: "ضعيف" },
-  { seat: "1010", name: "رامي عادل", result: "ناجح", grade: "جيد" },
-  { seat: "1011", name: "عادل سمير", result: "ناجح", grade: "مقبول" },
-  { seat: "1012", name: "سامح نجيب", result: "ناجح", grade: "جيد" },
-  { seat: "1013", name: "باسم مجدي", result: "ناجح", grade: "جيد جدًا" },
-  { seat: "1014", name: "كريم فؤاد", result: "راسب", grade: "ضعيف" },
-  { seat: "1015", name: "إيهاب وائل", result: "نا
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>نتيجة الطلاب</title>
+
+<style>
+
+body{
+font-family:Tahoma;
+background:#f3f6fb;
+margin:0;
+padding:20px;
+text-align:center;
+}
+
+.box{
+background:#fff;
+max-width:900px;
+margin:auto;
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+
+.logo{
+width:120px;
+margin-bottom:10px;
+}
+
+h1{
+color:#003c8f;
+margin:5px;
+}
+
+h2{
+color:#444;
+}
+
+input{
+width:80%;
+padding:12px;
+font-size:18px;
+margin:10px;
+border:1px solid #999;
+border-radius:8px;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+background:#0066cc;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+table{
+width:100%;
+margin-top:20px;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+}
+
+th{
+background:#0066cc;
+color:white;
+}
+
+#result{
+display:none;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<img src="logo.png" class="logo">
+
+<h1>جامعة طيبة التكنولوجية</h1>
+
+<h2>نتيجة الطلاب</h2>
+
+<input type="text" id="seat" placeholder="أدخل الرقم القومي">
+
+<br>
+
+<button onclick="showResult()">إظهار النتيجة</button>
+
+<div id="result">
+
+<h2>بيانات الطالب</h2>
+
+<table>
+
+<tr>
+<th>الاسم</th>
+<th>الرقم القومي</th>
+<th>الحالة</th>
+</tr>
+
+<tr>
+<td id="name"></td>
+<td id="id"></td>
+<td>مستجد</td>
+</tr>
+
+</table>
+
+<h2>المقررات</h2>
+
+<table>
+
+<tr>
+
+<th>المقرر الأول</th>
+
+<th>المقرر الثاني</th>
+
+<th>المقرر الثالث</th>
+
+</tr>
+
+<tr>
+
+<td id="m1"></td>
+
+<td id="m2"></td>
+
+<td id="m3"></td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div><script>
+
+const students = [
+
+{
+id:"30410202603457",
+name:"جرجس محفوظ",
+m1:"فن الطهو 1 - ممتاز",
+m2:"لغة إنجليزية - جيد جداً",
+m3:"تكنولوجيا الأغذية - ممتاز"
+},
+
+{
+id:"11111111111111",
+name:"محمد أحمد",
+m1:"المقرر الأول",
+m2:"المقرر الثاني",
+m3:"المقرر الثالث"
+},
+
+{
+id:"22222222222222",
+name:"محمود علي",
+m1:"المقرر الأول",
+m2:"المقرر الثاني",
+m3:"المقرر الثالث"
+}
+
+];
+
+function showResult(){
+
+let id=document.getElementById("seat").value;
+
+let s=students.find(x=>x.id==id);
+
+if(!s){
+
+alert("الرقم القومي غير موجود");
+
+return;
+
+}
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("name").innerHTML=s.name;
+
+document.getElementById("id").innerHTML=s.id;
+
+document.getElementById("m1").innerHTML=s.m1;
+
+document.getElementById("m2").innerHTML=s.m2;
+
+document.getElementById("m3").innerHTML=s.m3;
+
+}
+
+</script>
+
+</body>
+</html>
